@@ -2,15 +2,15 @@ from cx_Freeze import setup, Executable
 import os
 
 base = None
-
-
+includefiles = ['example.ini']
 
 executables = [Executable("myfirstprog.py", base=base)]
 
-packages = ["idna", "pandas", "numpy"]
+packages = ["idna", "pandas", "numpy", "configparser"]
 options = {
     'build_exe': {
         'packages':packages,
+        'include_files':includefiles
     },
 }
 
